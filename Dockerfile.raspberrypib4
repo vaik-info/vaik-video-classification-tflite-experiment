@@ -1,7 +1,8 @@
 FROM python:3.8.17-slim
 
 RUN apt-get update --allow-releaseinfo-change && \
-    apt-get install ffmpeg libatlas-base-dev python3-pil git -y
+    apt-get install ffmpeg libatlas-base-dev python3-pil git　libtiff5-dev libjpeg62-turbo-dev libopenjp2-7-dev zlib1g-dev \
+    libfreetype6-dev liblcms2-dev libwebp-dev tcl8.6-dev tk8.6-dev python3-tk libharfbuzz-dev libfribidi-dev libxcb1-dev -y
 
 RUN pip install --no-cache-dir --upgrade pip && \
         pip install --no-cache-dir tqdm imageio imageio-ffmpeg --no-deps --extra-index-url https://www.piwheels.org/simple && \
