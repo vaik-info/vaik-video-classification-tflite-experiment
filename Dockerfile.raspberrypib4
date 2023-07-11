@@ -20,7 +20,7 @@ RUN apt-get update && \
     libfribidi-dev \
     libxcb1-dev
 
-RUN pip install --no-cache-dir --upgrade pip && \
+RUN pip install --no-cache-dir --no-deps --upgrade pip && \
         pip install --no-cache-dir --extra-index-url https://www.piwheels.org/simple \
         tqdm \
         imageio \
