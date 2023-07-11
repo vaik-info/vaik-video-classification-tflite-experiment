@@ -45,7 +45,8 @@ sudo docker run --name raspberry4b_experiment_container \
 ### Create json file
 
 ```shell
-python inference.py --input_saved_model_path '~/model.tflite' \
+python inference.py --skip_frame 16 \
+                --input_saved_model_path '~/model.tflite' \
                 --input_classes_path '~/.vaik-utc101-video-classification-dataset_tfrecords/train/ucf101_labels.txt' \
                 --input_video_dir_path '~/.vaik-utc101-video-classification-dataset/test' \
                 --output_json_dir_path '~/.vaik-video-classification-pb-experiment/test_inf'
@@ -148,7 +149,7 @@ python inference.py --input_saved_model_path '~/model.tflite' \
 ```shell
 python calc_topk_acc.py --top_k 3 \
                 --input_json_dir_path '~/.vaik-video-classification-pb-experiment/test_inf' \
-                --input_classes_path '~/.vaik-utc101-video-classification-dataset_tfrecords/train/ucf101_labels.txt'
+                --input_classes_path '~/.vaik-utc101-video-classification-dataset_tfrecords/train/sub_ucf101_labels.txt'
 ```
 
 #### Output
