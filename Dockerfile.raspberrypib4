@@ -22,9 +22,7 @@ RUN pip install --no-cache-dir --upgrade pip && \
         pip install --no-cache-dir --extra-index-url https://www.piwheels.org/simple \
         numpy \
         pillow \
-        tqdm \
-        imageio \
-        imageio-ffmpeg
+        tqdm
 RUN pip install --no-cache-dir --upgrade pip && \
         pip install --no-cache-dir --no-deps --extra-index-url https://www.piwheels.org/simple \
         imageio \
