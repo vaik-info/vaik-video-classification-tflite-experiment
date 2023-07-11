@@ -4,5 +4,5 @@ RUN apt-get update --allow-releaseinfo-change && \
     apt-get install ffmpeg -y
 
 RUN pip install --no-cache-dir --upgrade pip && \
-        pip install --no-cache-dir tqdm imageio imageio-ffmpeg --extra-index-url https://www.piwheels.org/simple &&
+        pip install --no-cache-dir tqdm imageio imageio-ffmpeg --extra-index-url https://www.piwheels.org/simple && \
         pip install git+https://github.com/vaik-info/vaik-video-classification-tflite-inference.git
