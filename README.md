@@ -6,6 +6,40 @@ Create json file by video classification model. Calc ACC.
 pip install -r requirements.txt
 ```
 
+## Docker Install
+
+```shell
+sudo apt-get update && sudo apt-get upgrade
+curl -fsSL https://get.docker.com -o get-docker.sh
+sudo sh get-docker.sh
+```
+
+### aarch64(a1.medium)
+
+```shell
+sudo docker build -t a1_medium_experiment -f ./Dockerfile.a1_medium .
+sudo docker run --name a1_medium_experiment_container \
+           --rm \
+           -v ~/test_data/:/workspace/test_data \
+           -v ~/output_tflite_model:/workspace/output_tflite_model \
+           -v $(pwd):/workspace/source \
+           -it a1_medium_experiment /bin/bash
+```
+
+### armv7l(raspberry pi 4b) 
+
+```shell
+sudo docker build -t raspberry4b_experiment -f ./Dockerfile.raspberrypib4 .
+sudo docker run --name raspberry4b_experiment_container \
+           --rm \
+           -v ~/test_data/:/workspace/test_data \
+           -v ~/output_tflite_model:/workspace/output_tflite_model \
+           -v $(pwd):/workspace/source \
+           -it raspberry4b_experiment /bin/bash
+```
+
+---------
+]
 ## Usage
 
 ### Create json file
