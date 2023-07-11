@@ -4,7 +4,6 @@ RUN apt-get update && \
     apt-get install -y ffmpeg \
     python3 \
     python3-pip \
-    python3-tflite-runtime \
     libatlas-base-dev \
     git \
     libtiff5-dev \
@@ -27,5 +26,6 @@ RUN pip install --no-cache-dir --upgrade pip && \
         pip install --no-cache-dir --no-deps --extra-index-url https://www.piwheels.org/simple \
         tqdm \
         imageio \
-        imageio-ffmpeg
+        imageio-ffmpeg \
+        tflite-runtime
 RUN pip install git+https://github.com/vaik-info/vaik-video-classification-tflite-inference.git --no-deps --extra-index-url https://www.piwheels.org/simple
