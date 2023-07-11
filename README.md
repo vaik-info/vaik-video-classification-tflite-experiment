@@ -47,7 +47,7 @@ sudo docker run --name raspberry4b_experiment_container \
 ```shell
 python inference.py --input_saved_model_path '~/model.tflite' \
                 --input_classes_path '~/.vaik-utc101-video-classification-dataset_tfrecords/train/ucf101_labels.txt' \
-                --input_image_dir_path '~/.vaik-utc101-video-classification-dataset/test' \
+                --input_video_dir_path '~/.vaik-utc101-video-classification-dataset/test' \
                 --output_json_dir_path '~/.vaik-video-classification-pb-experiment/test_inf'
 ```
 
