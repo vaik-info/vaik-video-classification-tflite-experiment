@@ -20,13 +20,20 @@ def main(skip_frame, input_saved_model_path, input_classes_path, input_video_dir
     video_path_list = []
     for files in types:
         video_path_list.extend(glob.glob(os.path.join(input_video_dir_path, '*', files), recursive=True))
+
     total_inference_time = 0
+    total_frames_num = 0
+
+    model.inference([frame for frame in imageio.get_reader(video_path_list[0],  'ffmpeg')][::skip_frame])
+
     for video_path in tqdm(video_path_list):
         # read
         video = imageio.get_reader(video_path,  'ffmpeg')
+        frames = [frame for frame in video][::skip_frame]
+        total_frames_num += len(frames)
         # inference
         start = time.time()
-        output, raw_pred = model.inference([frame for frame in video][::skip_frame])
+        output, raw_pred = model.inference(frames)
         end = time.time()
         total_inference_time += (end - start)
         # dump
@@ -39,6 +46,7 @@ def main(skip_frame, input_saved_model_path, input_classes_path, input_video_dir
         with open(output_json_path, 'w') as f:
             json.dump(output_dict, f, ensure_ascii=False, indent=4, sort_keys=True, separators=(',', ': '))
     print(f'{len(video_path_list)/total_inference_time}[videos/sec]')
+    print(f'{total_frames_num/total_inference_time}[frame/sec]')
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description='inference')
