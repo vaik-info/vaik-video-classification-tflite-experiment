@@ -1,10 +1,5 @@
 # vaik-video-classification-tflite-experiment
 Create json file by video classification model. Calc ACC.
-## Install
-
-```shell
-pip install -r requirements.txt
-```
 
 ## Docker Install
 
@@ -35,6 +30,13 @@ sudo docker run --name experiment_container \
            -v ~/output_tflite_model:/workspace/output_tflite_model \
            -v $(pwd):/workspace/source \
            -it experiment /bin/bash
+```
+---------
+
+## Install
+
+```shell
+pip install -r requirements.txt
 ```
 
 ---------
