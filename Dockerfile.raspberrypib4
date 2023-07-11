@@ -15,7 +15,7 @@ RUN apt-get update && \
     tk8.6-dev \
     python3-tk \
     python3-numpy \
-    python3-imaging \
+    python3-pil \
     libharfbuzz-dev \
     libfribidi-dev \
     libxcb1-dev
