@@ -21,7 +21,7 @@ RUN apt-get update && \
     libxcb1-dev
 
 RUN pip install --no-cache-dir --upgrade pip && \
-        pip install --no-cache-dir --no-deps xtra-index-url https://www.piwheels.org/simple \
+        pip install --no-cache-dir --no-deps --extra-index-url https://www.piwheels.org/simple \
         tqdm \
         imageio \
         imageio-ffmpeg
