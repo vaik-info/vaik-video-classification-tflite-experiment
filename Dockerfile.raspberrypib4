@@ -12,8 +12,8 @@ RUN apt-get update --allow-releaseinfo-change && \
 RUN apt-get install libedgetpu1-legacy-std python3-edgetpu -y
 RUN apt-get install python3-pycoral python3-tflite-runtime python3-pil python3-sklearn -y
 
-RUN pip3 install https://github.com/google-coral/pycoral/releases/download/release-frogfish/tflite_runtime-2.5.0.post1-cp37-cp37m-linux_armv7l.whl
+RUN pip3 install tflite_runtime
 RUN apt-get install libedgetpu1-std -y
 
 RUN pip3 install --no-deps tqdm==4.64.1
-RUN pip3 install --no-deps git+https://github.com/vaik-info/vaik-classification-tflite-inference.git@7fd529eb541a84473d6b336e7d9e8adb2c8e0e3e
+RUN pip3 install --no-deps git+https://github.com/vaik-info/vaik-video-classification-tflite-inference.git
