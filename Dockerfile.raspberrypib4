@@ -19,5 +19,9 @@ RUN apt-get update && \
     libxcb1-dev
 
 RUN pip install --no-cache-dir --upgrade pip && \
-        pip install --no-cache-dir tqdm imageio imageio-ffmpeg --no-deps --extra-index-url https://www.piwheels.org/simple && \
+        pip install --no-deps --no-cache-dir --extra-index-url https://www.piwheels.org/simple \
+        tqdm \
+        imageio \
+        imageio-ffmpeg \
+        pillow && \
         pip install git+https://github.com/vaik-info/vaik-video-classification-tflite-inference.git
