@@ -24,5 +24,6 @@ RUN pip install --no-cache-dir --upgrade pip && \
         pip install --no-cache-dir --no-deps --extra-index-url https://www.piwheels.org/simple \
         tqdm \
         imageio \
-        imageio-ffmpeg
-RUN pip install git+https://github.com/vaik-info/vaik-video-classification-tflite-inference.git --extra-index-url https://www.piwheels.org/simple
+        imageio-ffmpeg \
+        tflite-runtime
+RUN pip install git+https://github.com/vaik-info/vaik-video-classification-tflite-inference.git --no-deps --extra-index-url https://www.piwheels.org/simple
