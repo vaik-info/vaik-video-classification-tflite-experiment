@@ -1,1 +1,4 @@
 FROM python:3.9
+
+RUN apt-get update --allow-releaseinfo-change && \
+    apt-get install python3-scipy python3-pip gfortran libopenblas-dev liblapack-dev -y
