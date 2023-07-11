@@ -1,7 +1,7 @@
-FROM python:3.9
+FROM python:3.8-slim
 
 RUN apt-get update --allow-releaseinfo-change && \
-    apt-get install ffmpeg -y
+    apt-get install ffmpeg libatlas-base-dev python3-pil -y
 
 RUN pip install --no-cache-dir --upgrade pip && \
         pip install --no-cache-dir tqdm imageio imageio-ffmpeg --extra-index-url https://www.piwheels.org/simple && \
